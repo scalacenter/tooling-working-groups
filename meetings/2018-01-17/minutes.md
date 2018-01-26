@@ -3,7 +3,7 @@
 In attendance: Jon Pretty, Bill Venners, Jorge Vicente Cantero, P. Oscar
 Boykin, Dale Wijnand, Martin Odersky, Heather Miller, Ólafur Páll Geirsson
 (Olaf), Eugene Burmako, Nikolay Tropin, Stu Hood, Seth Tisue, Adriaan Moors,
-Eugene Yokata, Gabriele Petronella, Alexey Alekhin, Iulian Dragos, Vladimir
+Eugene Yokota, Gabriele Petronella, Alexey Alekhin, Iulian Dragos, Vladimir
 Polushin, Shane Delmore, Guillaume Martres, Rory Graves, Martin Duhem, and
 others listening only.
 
@@ -72,77 +72,92 @@ understanding of the existing tooling ecosystem.
 
 ### Scalameta & SemanticDB - Eugene Burmako, Twitter
 
-Scalameta has almost 50 open-source developers, and as been funded by EPFL,
+Scalameta has almost 50 open-source developers, and has been funded by EPFL,
 JetBrains, Scala Center and Twitter. Scalameta provides APIs optimised for
 tools, designed to be cross-platform, and to work with multiple compilers. It
 provides a syntactic API and a semantic API. SemanticDB is an interchange
 format for Scalameta based on protocol buffers. A SemanticDB document
 corresponds to a source file. SemanticDB can be generated with a compiler
-plugin. The file contains full details of symbols, and details of how names and
-positions and resolve to symbols.
+plugin. The file contains full details of symbols, and how identifiers resolve
+to symbols.
+
+Eugene shared a link to a Scalameta [pull
+request](https://github.com/scalameta/scalameta/pull/1220) detailing the
+SemanticDB specification.
 
 There's a SemanticDB plugin for Scalac 2.11 and 2.12. Many open-source Scala
 projects have been indexed already, including all of Twitter's code. It enables
 Scalafix, Metadoc, Metals and several internal tools at Twitter (which Eugene
-is not at liberty to talk about). It does not require a running compiler, and
-is very fast, even for large databases. The information can be put into an SQL
-database. As an example, two million lines of code can be indexed into an 800MB
-SQLite database, and offers 10ms access times.
+is not at liberty to talk about). Processing SemanticDB data does not require a
+running compiler, and is very fast, even for large codebases. The information
+can be put into an SQL database. As an example, two million lines of code can
+be indexed into an 800MB SQLite database, and offers 10ms access times.
 
 Eugene shared the [slides from his presentation](http://goo.gl/TsFfqC).
 
 ### Metals - Eugene Burmako, Twitter
 
-Metals ("scalaMETA Language Server") in an LSP implementation based on
-Scalameta, developed primarily by Ólafur Páll Geirsson. Olaf was not able to
-attend the full meeting, so Eugene Burmako presented on his behalf.
+[Metals](https://github.com/scalameta/metals) ("Scala*meta* *L*anguage
+*S*erver") in an LSP implementation based on Scalameta, developed primarily by
+Ólafur Páll Geirsson, Gabriele Petronella and Alexey Alekhin. Olaf was not able
+to attend the full meeting, so Eugene Burmako presented on his behalf.
 Unfortunately, this part of the presentation was not fully captured on the
 recording, but Olaf shared a document showing some of the [features provided by
 Metals](https://geirsson.com/assets/metals/).
 
 ### Bloop - Jorge Vicente Cantero, Scala Center
 
-Bloop is a build server, integrating with all build tools including sbt, Maven
-and Gradle, which can be considered an small enhancement over the existing
-Scalac compiler. It was created by Jorge and Martin Duhem. A stable release
-will be available soon.
+Bloop is a build server developed by Jorge and Martin Duhem, integrating with
+all build tools including sbt, Maven and Gradle, which can be considered an
+small enhancement over the existing Scalac compiler. A stable release will be
+available soon.
 
 Jorge also shared a document detailing a draft proposal for a [Build Server
 Protocol](https://github.com/scalacenter/bsp/blob/master/docs/bsp.md) or "BSP".
 
-### Sbt LSP implementation - Eugene Yokata, Lightbend
+### Sbt LSP implementation - Eugene Yokota, Lightbend
 
-The sbt LSP server predates Eugene Yokata starting at Lightbend: there has been
-an sbt server since 2015, with sepration of front-end and backend, running on
+The sbt LSP server predates Eugene Yokota starting at Lightbend: there has been
+an sbt server since 2015, with separation of front-end and backend, running on
 two JVMs. A simpler approach was proposed in 2016, running on a single JVM. The
 server can be thought of an event-based CQRS system, where commands arrive, and
-responses are asynchronously returned. Sbt has full knowledge of the build,
-including library management and test integration. Sbt can provide richer
-features than LSP, including information like packaging and deployment. Error
-messages can be sent as JSON to clients.
+responses are asynchronously returned.
+
+While sbt as a build tool has full knowledge of the build (source, Zinc,
+libraries, tests, extensible plugins) and acts as text-based IDE, there is a
+growing demand for richer development environment (jumping to error position,
+code navigation, tab completion, visual debugging, etc). Eugene sees LSP to be
+an intersection of these two, and the relevant feature in sbt 1 is called
+"Event Logging".
 
 Eugene recommended reading his blog about the [Sbt Server
-Reboot](http://eed3si9n.com/sbt-server-reboot).
+Reboot](http://eed3si9n.com/sbt-server-reboot), details of [sbt 1.1.0 with sbt
+server and slash
+syntax](https://developer.lightbend.com/blog/2017-11-30-sbt-1-1-0-RC1-sbt-server/)
+and shared [his slides from the
+meeting](https://www.slideshare.net/EugeneYokota/sbt-server-lsp-discussion-2018-jan).
 
 ### Pants - Stu Hood, Twitter
 
 Pants is a build tool which has recently reached 5000 commits, and has just
 become a nailgun server. Work is ongoing on remoting. Parts of Pants are
 implemented in Rust, and lots of work going into improving throughput. Stu
-talked about "@rules", and demonstrated how fast Pants is, citing some sub-50ms
-compilation times. Pants also offers dependency inference from source-code
-imports.
+talked about "@rules", and gave a demonstration of Pants running. Pants also
+offers dependency inference from source-code imports.
 
 He emphasized that he thought a "thin" LSP model would be the best approach,
 where a build tool proxies the thin LSP protocol to a thin LSP server to invoke
 a presentation compiler.
+
+Stu shared [his
+slides](https://drive.google.com/open?id=1GbViJxPsrNfbYgOXyF1aFSz20PwmVtmc).
 
 ### Bazel - P. Oscar Boykin, Stripe
 
 Bazel is a build tool developed by Google focussing on fast, pure, reproducible
 and correct builds, taking heavy advantage of caching. It's been used at Stripe
 for two years, and supports multiple different languages. Bazel uses external
-  source dependencies.
+source dependencies.
 
 The build language is a restricted subset to ensure reproducibility. Google
 have a team of fifty people working on Bazel.
@@ -182,13 +197,16 @@ presentation support in the IntelliJ editor. IntelliJ also offers Java support.
 JetBrains are very interested in LSP and BSP, though they're not sure whether
 they can use it in IntelliJ, which currently relies on their own
 implementation. He noted that Bloop may be particularly useful for IntelliJ,
-though is uncertain about whether it could easily replace IntelliJ's own
-typechecker.
+though is uncertain about whether it could easily become a replacement for
+IntelliJ's own typechecker, or to remove their existing integration with Zinc.
 
-### ScalaIDE/Eclipse - Iulian Dragos, Triplequotes
+Jorge added following the meeting, that he is working with Justin Kieser from
+JetBrains on implementing BSP suport in IntelliJ.
+
+### ScalaIDE/Eclipse - Iulian Dragos, Triplequote
 
 Iulian has been working on the LSP implementation for VSCode, based on Ensime.
-The implementation delegates the protocol as an in-process Ensime instance,
+The implementation delegates the protocol to an in-process Ensime instance,
 circumventing the socket protocol.
 
 This approach avoided many of the problems Iulian faced working on the ScalaIDE
@@ -211,9 +229,9 @@ non-compiling programs.
 
 Any Dotty project built with sbt can launch VSCode with a single command, and
 will automatically provide common IDE features like code-linking and
-completion. Guillaume suggests that he would prefer the IDE to interact
-directly with the language server, rather than having the IDE interact with the
-build tool (which then interacts with the language server), and that this
+completion. Guillaume suggests that he would prefer the editor to interact
+directly with the language server, rather than having the editor interact with
+the build tool (which then interacts with the language server), and that this
 approach has been accommodated in the [Build Server Protocol
 proposal](https://github.com/scalacenter/bsp/blob/master/docs/bsp.md) developed
 by Jorge and Olaf.
@@ -238,6 +256,9 @@ other configuration.
 
 He proposes starting with sbt, which already has an LSP implementation, but
 inviting other build tools such as Bloop to use the proposal.
+
+Jorge noted after the meeting that the Scala Center is already working with the
+sbt team at Lightbend to implement a bsp server prototype in sbt.
 
 TASTY is a way for the compiler to serialize its abstact syntax trees. Any file
 that Dotty compiles will produce a TASTY tree. Any TASTY trees from files that
@@ -275,17 +296,18 @@ for Scalac.
 
 ### Rsc - Eugene Burmako, Twitter
 
-[Rsc](http://goo.gl/LHmuym) is an experiment aiming to get 5-10x compilation
-speedups. It currently only supports a subset of Scala, and provides partial
-compilation, but is already showing impressive performance.
+Rsc is an experiment aiming to get 5-10x compilation speedups. It currently
+only supports a subset of Scala, and provides partial support for typechecking,
+but is already showing [impressive
+performance](https://github.com/twitter/reasonable-scala/blob/99f55744fe31181544ff563b7344ac22287da895/docs/compiler.md#summary).
 
 Eugene believes that it will be possible to typecheck methods in parallel
 during compilation, and notes that separating name resolution and typechecking
-allows is essential for a good user experience. Rsc cross-compiles to Scala
-Native. Eugene spoke briefly about some future plans for Rsc, described in more
-detail in his slides.
+is essential for a good user experience. Rsc cross-compiles to Scala Native.
+Eugene spoke briefly about some future plans for Rsc, described in more detail
+[in his slides](http://goo.gl/LHmuym).
 
-### Hydra - Iulian Dragos, Triplequotes
+### Hydra - Iulian Dragos, Triplequote
 
 Hydra is a Scala compiler that aims to be a drop-in replacement for Scalac,
 focussing on compile performance. Everything in Scalac from 2.11.8 - 2.12.4 is
@@ -293,7 +315,7 @@ supported. The language-server front-end should not need specific knowledge of
 Hydra.
 
 Regarding building, special integration would be required, but it still aims to
-be a drop-in replcement for Scalac with a few additional options. Any build
+be a drop-in replacement for Scalac with a few additional options. Any build
 protocol would need to accommodate those additional parameters (e.g. specifying
 the number of cores to use for compilation).
 
@@ -319,9 +341,14 @@ The BSP proposal has followed the "style" of the LSP protocol.
 Rory Graves made the point that different components have different
 responsibilities, and he encourages a modular approach with a "single point of
 entry" or a "busbar" for a number of different tools to communicate through,
-which holds the different components together.
+which holds the different components together. Different components or editor
+features have, and need, different subsets of the information available. So
+rather than having a thick component, a thin "shim" which defers to
+"information providers" would be preferable. Stu agreed with this approach,
+though thinks more thought needs to go into which process receives the
+connection from the client, i.e. which process is the "hub" or "bus".
 
-Eugene Yokata notes that sbt can provide a lot of details like type
+Eugene Yokota notes that sbt can provide a lot of details like type
 information. He notes there are two approaches, the SemanticDB and the
 presentation compiler, and asks where they can collaborate. He says that, as he
 sees it, the presentation compiler can work with incomplete data, but it can
@@ -329,8 +356,9 @@ suffer from performance problems, and asks for clarification.
 
 In response, Stu Hood thinks that it's entirely possible for the SemanticDB to
 provide partial information. Regarding the "thick" vs "thin" model, he
-disagrees with Rory's suggestion of a bus, and suggests using a build tool as
-the "hub". He points out that the LSP server does not need a classpath.
+suggested using a build tool as the "hub", which was essentially the same as as
+the "bus" model proposed by Rory. He points out that the LSP server does not
+need a classpath.
 
 Jon sees the question more about whether we should standardize on a model, or
 whether this is something every build tool should define for itself. Stu
@@ -348,11 +376,11 @@ technical details.
 
 Eugene Burmako added that he sees SemanticDB as a useful standard that works
 for both complete and partial information. He points out that it doesn't have
-to be persisted, so it can be exchanged in-memory. He notes that it's used to
-index third-party dependencies. It is used to communicate with the presentation
-compiler: the presentation compiler can produce SemanticDB data. Eugene
-suggests that SemanticDB could be a good standard for exchanging information
-between tools.
+to be persisted, so it can be exchanged in-memory, and that it's used to
+index third-party Scala and Java dependencies in Metals. It is used to
+communicate with the presentation compiler: the presentation compiler can
+produce SemanticDB data. Eugene suggests that SemanticDB could be a good
+standard for exchanging information between tools.
 
 Jon suggests that the LSP proposal is well-defined, and implementations exist,
 but suggests that the BSP should be designed to be modular to support more
@@ -389,17 +417,19 @@ Board meeting, proposing that the Scala Center support the initiative.
 
 Jon suggests six to eight people should be in each group.
 
-Stu suggests a "protocols subgroup" within the Scala Center, and suggests that
-Twitter could put in a proposal for the next meeting.
+Stu suggests a more generally-titled "protocols subgroup" as opposed to a "BSP
+subgroup" to ensure that all options are considered before choosing any
+particular approach, and suggests that Twitter could put in a proposal for the
+next meeting.
 
-Jorge is skeptical about what can be achieved without having a good definition
-of what the groups can do, and Jon advises that this was never going to be
-possible in the limited time available during the meeting.
+Jorge was skeptical that we had a good definition of what problem the groups
+should be solving, and Jon advises that this was never going to be possible in
+the limited time available during the meeting.
 
 Jon agreed to take the next steps offline. He will take nominations, and will
 aim to agree on what the remit of each group should be.
 
-Eugene Yokata sees two separate axes, one of which is to give Scala users a
+Eugene Yokota sees two separate axes, one of which is to give Scala users a
 better working experience, while the other is to support different build tools.
 
 Adriaan suggested that GitHub would provide a good venue for the working
