@@ -11,7 +11,7 @@ request is merged. The "Proposition" part of the nomination is optional, and
 may be refined in subsequent pull requests.
 
 Anyone may nominate or second up to three candidates to either or both working
-groups.
+groups. Proposers and seconders should be different from the nominee.
 
 The deadline for nominations will be 12pm GMT on Wednesday, 28 February.
 
