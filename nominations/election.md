@@ -37,8 +37,8 @@ The following rules shall govern the elections to Scala Tooling working groups.
     STP-WG, from the subset of candidates who are standing for both groups.
 
 12. If fewer than three candidates are standing for election to both working
-    groups, then the second or both of the rounds described in (11) shall be
-    omitted as necessary, with fewer than two candidates elected.
+    groups, then the second or both of the aforecited rounds shall be omitted
+    as necessary, with fewer than two candidates elected.
 
 13. If, after the first two rounds, the working groups include no members
     representing the Scala Center, one round will be held for each working
@@ -48,29 +48,29 @@ The following rules shall govern the elections to Scala Tooling working groups.
 14. If only one candidate is standing for election in any of the aforesaid
     rounds of voting then she or he will be appointed without a vote.
 
-14. A proxy candidate called "Nobody else" will additionally stand in each
+15. A proxy candidate called "Nobody else" will additionally stand in each
     subsequent round of voting.
 
-15. A number of subsequent rounds will proceed to elect members alternately to
+16. A number of subsequent rounds will proceed to elect members alternately to
     each working group until either the maximum of eight members is reached for
     that group, or "Nobody else" is elected.
 
-16. Every round of voting shall be an independent single transferable vote
+17. Every round of voting shall be an independent single transferable vote
     (STV) election, and electors will specify an ordered list of candidates,
     though a user interface convenient for doing so, announced by the presiding
     officer.
 
-17. The rounds of voting shall be carried out one after the other, with enough
+18. The rounds of voting shall be carried out one after the other, with enough
     time allocated to each round for electors to comfortably specify their
     preference order, and with enough time provided between voting rounds to
     announce the elected candidate and prepare the next round. This time will
     be determined and announced by the presiding officer, but is estimated to
     be approximately five minutes per round.
 
-18. Anonymized voting data for each round shall be made available automatically
+19. Anonymized voting data for each round shall be made available automatically
     to every candidate, and to anyone else on request.
 
-19. In the event that an exceptional circumstance should arise which is not
+20. In the event that an exceptional circumstance should arise which is not
     covered by these articles, the presiding officer shall decide upon an
     appropriate course of action.
 
