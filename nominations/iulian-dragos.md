@@ -2,16 +2,16 @@
 
 ## Proposer
 
-This candidate has been nominated by @fommil and seconded by @rorygraves.
+This candidate has been nominated by Sam Halliday (@fommil) and seconded by Rory Graves (@rorygraves).
 
 ## Qualifications and Experience
 
-- expert on the scala interactive compiler
+- expert on the Scalac interactive compiler
 - wrote the first scala LSP implementation
 
 ## Affiliations
 
-- standing as an individual
+- Triplequote Sàrl
 
 ## Working Groups
 
