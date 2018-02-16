@@ -10,9 +10,11 @@ their willingness to stand for election to the working groups before any pull
 request is merged. The "Proposition" part of the nomination is optional, and
 may be refined in subsequent pull requests.
 
-Anyone may nominate or second up to three candidates to either or both working
-groups. Proposers and seconders should be different from the nominee.
-
 The deadline for nominations will be 12pm GMT on Wednesday, 28 February.
+
+Proposers, seconders and candidates are advised to read [the rules governing
+the
+election](https://github.com/scalacenter/tooling-working-groups/blob/master/nominations/election.md)
+before submitting a pull-request.
 
 
