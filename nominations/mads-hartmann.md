@@ -35,6 +35,6 @@ opportunity to at least help make sure my Scala experience is consistent
 throughout the day.
 
 [scala-semantic-search]: http://www.diku.dk/begivenhedsmappe/begivenheder-2013/master-thesis-defence-scala-semantic-search/
-[yes-that-took-6-months]: https://www.youtube.com/watch?v=YY5MSIcS2SA
+[yes-that-took-6-months-to-build]: https://www.youtube.com/watch?v=YY5MSIcS2SA
 [scala.tmbundle]: https://github.com/mads-hartmann/scala.tmbundle
 [200-word-limit-hack]: https://twitter.com/Mads_Hartmann/status/956476571279351808
