@@ -2,7 +2,7 @@
 
 ## Proposer
 
-No one 😅 I'd sure like if someone would nominate me.
+Nominated by Sam Halliday (@fommil) and seconded by Iulian Dragoș (@dragos).
 
 ## Qualifications and Experience
 
@@ -25,7 +25,7 @@ Employed by [Famly][famly].
 
 ## Working Groups
 
-This candidate is nominated as a candidate to the LSP Working Group (LSP-WG)
+This candidate is nominated as a candidate to the LSP Working Group (LSP-WG).
 
 ## Proposition
 
