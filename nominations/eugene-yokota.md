@@ -2,8 +2,8 @@
 
 ## Proposer
 
-This candidate has been nominated by Eugene Burmako.
-and seconded by ???
+This candidate has been nominated by Eugene Burmako (@xeno-by).
+and seconded by Adam Warski (@adamw).
 
 ## Qualifications and Experience
 
