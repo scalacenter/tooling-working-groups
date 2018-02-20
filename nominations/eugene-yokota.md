@@ -2,7 +2,7 @@
 
 ## Proposer
 
-This candidate has been nominated by ???
+This candidate has been nominated by Eugene Burmako.
 and seconded by ???
 
 ## Qualifications and Experience
