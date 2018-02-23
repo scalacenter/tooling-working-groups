@@ -13,6 +13,7 @@ and seconded by Ólafur Páll Geirsson (@olafurpg).
   a compiler-agnostic data model for semantic information about programs
   in Scala and other languages.
 - Leading the Advanced Scala Tools team at Twitter.
+- Leading an internal LSP implementation that works at Twitter scale.
 
 ## Affiliations
 
