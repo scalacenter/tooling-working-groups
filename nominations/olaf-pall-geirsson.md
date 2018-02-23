@@ -2,7 +2,8 @@
 
 ## Proposer
 
-This candidate has been nominated by Alexey Alekhin (@laughedelic) and seconded by *seconder*.
+This candidate has been nominated by Alexey Alekhin (@laughedelic) and seconded
+by Eugene Burmako (@xeno-by).
 
 ## Qualifications and Experience
 
