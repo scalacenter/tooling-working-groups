@@ -1,4 +1,4 @@
-# Andy Scott @andyscott
+# Andy Scott [@andyscott](https://github.com/andyscott)
 
 ## Proposer
 
