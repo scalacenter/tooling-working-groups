@@ -2,7 +2,8 @@
 
 ## Proposer
 
-This candidate has been nominated by Sam Halliday and seconded by Rory Graves.
+This candidate has been nominated by Sam Halliday (@fommil) and seconded by
+Rory Graves (@rorygraves).
 
 ## Qualifications and Experience
 
@@ -11,7 +12,7 @@ This candidate has been nominated by Sam Halliday and seconded by Rory Graves.
 
 ## Affiliations
 
-- standing as an independent
+- Employed by Facebook (though not representing them)
 
 ## Working Groups
 
