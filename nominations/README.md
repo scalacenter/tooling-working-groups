@@ -2,7 +2,7 @@
 
 To make a nomination to one of the working groups, please copy the
 `template.md` file in the `nominations` directory to a file called
-`firstname_lastname.md`, and edit its contents appropriately.
+`firstname-lastname.md`, and edit its contents appropriately.
 
 Create a new pull-request containing just this new file. Nominations require a
 proposer and a seconder, and any nominated candidate will be asked to confirm
@@ -16,5 +16,3 @@ Proposers, seconders and candidates are advised to read [the rules governing
 the
 election](https://github.com/scalacenter/tooling-working-groups/blob/master/nominations/election.md)
 before submitting a pull-request.
-
-
