@@ -2,7 +2,7 @@
 
 ## Proposer
 
-This candidate has been nominated by Alexey Alekhin (@laughedelic) and seconded by *seconder*.
+This candidate has been nominated by Alexey Alekhin (@laughedelic) and seconded by Gabriele Petronella (@gabro).
 
 ## Qualifications and Experience
 
