@@ -2,7 +2,8 @@
 
 ## Proposer
 
-This candidate has been nominated by Nicolas Stucki (@nicolasstucki) and seconded by *seconder*.
+This candidate has been nominated by Nicolas Stucki (@nicolasstucki) and
+seconded by Seth Tisue (@sethtisue).
 
 ## Qualifications and Experience
 
