@@ -16,7 +16,8 @@ seconded by Seth Tisue (@sethtisue).
 
 ## Working Groups
 
-This candidate is nominated as a candidate to the LSP Working Group (LSP-WG).
+This candidate is nominated as a candidate to the LSP Working Group (LSP-WG)
+and the STP Working Group (STP-WG).
 
 ## Proposition
 
