@@ -2,7 +2,7 @@
 
 ## Proposer
 
-This candidate has been nominated by Heather Miller (@heathermiller) and seconded by *seconder*.
+This candidate has been nominated by Heather Miller (@heathermiller) and seconded by Ólafur Páll Geirsson (@olafurpg).
 
 ## Qualifications and Experience
 
@@ -13,7 +13,7 @@ _Scala-specific tooling_:
 _Tooling for other languages_:
 
 - creator and maintainer of an [interpreter and debugger for the Grace programming language](http://blorente.me/naylang/).
-- [ScrummVM's graphic library contributor](https://gist.github.com/blorente/a8a66788aba35f14cf2d2338eb2bd069)
+- [ScummVM's graphic library contributor](https://gist.github.com/blorente/a8a66788aba35f14cf2d2338eb2bd069)
 
 ## Affiliations
 
