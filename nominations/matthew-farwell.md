@@ -10,6 +10,8 @@ This candidate has been nominated by *proposer* and seconded by *seconder*.
 - Author of [scalastyle](http://www.scalastyle.org)
 - Co-Author with Josh Suereth of [sbt in action](https://www.manning.com/books/sbt-in-action)
 - contributor to Scala-IDE, back in the day
+- host on [SE Radio](http://www.se-radio.net/)
+- experience of lots of different environments (small/large companies, older techno/cutting edge)
 
 ## Affiliations
 
