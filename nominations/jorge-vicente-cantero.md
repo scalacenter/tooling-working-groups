@@ -17,8 +17,7 @@ This candidate has been nominated by Alexey Alekhin (@laughedelic) and seconded 
 
 ## Working Groups
 
-This candidate is nominated as a candidate to the LSP Working Group (LSP-WG)
-and the Scala Tooling Protocols Working Group (STP-WG).
+This candidate is nominated as a candidate to the Scala Tooling Protocols Working Group (STP-WG).
 
 ## Proposition
 
